@@ -1,33 +1,54 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
-
+ var votingAge = 19;
+ if(votingAge > 18){
+     console.log(true);
+}
 
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+ var condOne = 8;
+ var condTwo= "yup";
 
-
+ if(condTwo === "yup"){
+     condOne = 9;
+ }
+ else{
+     condOne = 7;
+ }
+ console.log(condOne);
+ 
 
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
+let numero = "1999";
+let numeroDos = Number(numero);
+console.log(numero + " is a string")
+console.log(numeroDos)
 
 
 
 
 
 //Task d: Write a function to multiply a*b 
+function multipl(a,b){
+    return a*b
+}
 
-
-
+console.log(multipl(5,4))
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
-
-
+function doggy(a){
+ return a*7;
+}
+let myAge = 22;
+console.log(doggy(myAge))
 
 
 
@@ -48,9 +69,38 @@
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-  
+  function feedIt(weight,age){
+      if(age>=1){
+        if(weight<= 5){
+             return 5/100 *weight
+        }
+        else if(weight>5 && weight<=10){
+             return 4/100 *weight
+        }
+        else if(weight>11 && weight<=15){
+            return 3/100 *weight
+        }
+        else{
+            return 2/100 *weight
+        }
+      }
+      else{
+          if(age>=1/6 || age<= 1/3){
+            return 10/100 *weight
+          }
+          else if(age> 1/3 || age<=7/12){
+            return 5/100 *weight
+            }
+          else if(age>7/12 || age<=1){
+            return 4/100 *weight
+          }
+          else{
+            return "something went wrong"
+          }
+        }
+  }
 
-
+   console.log(feedIt(15,1))
 
 
 /************************************************************** Task 4 **************************************************************/
