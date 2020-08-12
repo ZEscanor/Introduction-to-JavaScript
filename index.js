@@ -85,13 +85,13 @@ console.log(doggy(myAge))
         }
       }
       else{
-          if(age>=1/6 || age<= 1/3){
+          if(age>=1/6 && age<= 1/3){
             return 10/100 *weight
           }
-          else if(age> 1/3 || age<=7/12){
+          else if(age> 1/3 && age<=7/12){
             return 5/100 *weight
             }
-          else if(age>7/12 || age<=1){
+          else if(age>7/12 && age<=1){
             return 4/100 *weight
           }
           else{
@@ -101,6 +101,7 @@ console.log(doggy(myAge))
   }
 
    console.log(feedIt(15,1))
+   console.log(feedIt(15,.5))
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -109,7 +110,52 @@ console.log(doggy(myAge))
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
-
+function rockPaperScissors(choice){
+ let compChoice = Math.floor(Math.random()*3)
+ var compActual;
+ 
+ if(compChoice === 0){
+   compActual = "rock"
+ }
+ else if(compChoice === 1){
+   compActual = "paper"
+ }
+ else{
+   compActual = "scissors"
+ }
+ console.log("computer chose " + compActual)
+ console.log("you chose " + choice)
+ if(choice === "rock" && compActual === "paper"){
+   console.log("You lost")
+ }
+ else if(choice === "rock" && compActual === "scissors"){
+  console.log("You won")
+}
+else if(choice === "rock" && compActual === "rock"){
+  console.log("draw")
+}
+else if(choice === "paper" && compActual === "scissors"){
+  console.log("You lost")
+}
+else if(choice === "paper" && compActual === "rock"){
+  console.log("You won")
+}
+else if(choice === "paper" && compActual === "paper"){
+  console.log("Draw")
+}
+else if(choice === "scissors" && compActual === "scissors"){
+  console.log("Draw")
+}
+else if(choice === "scissors" && compActual === "rock"){
+  console.log("You lost")
+}
+else if(choice === "scissors" && compActual === "paper"){
+  console.log("You Won")
+}
+}
+console.log(rockPaperScissors("rock"))
+console.log(rockPaperScissors("paper"))
+console.log(rockPaperScissors("scissors"))
   
   
 
@@ -117,12 +163,16 @@ console.log(doggy(myAge))
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-
+function kmToMiles(distance){
+  return distance * 0.621371
+}
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+  function ftToCm(distance){
+    return distance * 30.48
+  }
 
 
 
@@ -131,9 +181,16 @@ console.log(doggy(myAge))
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+  function annoyingSong(numbaOne){
+    let numba = numbaOne;
+    for(let numba = numbaOne; numba>0; numba--){
+      console.log(numba + " bottles of soda on the wall " + numba + " bottles of soda " + " take one pass it around " + (numba-1) + " bottles of soda on the wall ")
+    }
+    return
+  }
 
-
+//annoyingSong(99); Dont use this unless you want to be annoyed
+annoyingSong(10);
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -144,6 +201,28 @@ console.log(doggy(myAge))
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
+  function grade(numeroO){
+    if(numeroO>= 90){
+        return "You gotta A"
+    }
+    else if(numeroO>=80){
+       return "You gotta B"
+    }
+    else if(numeroO>= 70){
+      return "YOu gotta C"
+    }
+    else if(numeroO>= 60){
+      return "You gotta D"
+    }
+    else{
+     return "UMMM TRY HARDER :)"
+    }
+  }
+  console.log(grade(90));
+  console.log(grade(80));
+  console.log(grade(70));
+  console.log(grade(60));
+  console.log(grade(50));
   
 
   
@@ -161,8 +240,6 @@ console.log(doggy(myAge))
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
-
-
+var gitItIn = prompt("Rock, Paper or Scissors?")
+console.log(rockPaperScissors(gitItIn));
 
